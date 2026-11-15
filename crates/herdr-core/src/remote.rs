@@ -574,7 +574,7 @@ fn mirror_event(core: &Core, m: &Machine, p: Value) {
     core.deliver(&mut st, kind, address, data, &record, was.as_ref());
 }
 
-/// An event's change, applied to a terminal record (see schema/README.md).
+/// An event's change, applied to a terminal record (see schema/README.org).
 fn apply(record: &mut Value, kind: &str, data: &Value) {
     let set = |record: &mut Value, keys: &[&str]| keys.iter().for_each(|k| record[*k] = data[*k].clone());
     match kind {

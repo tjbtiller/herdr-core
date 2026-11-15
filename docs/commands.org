@@ -1,13 +1,13 @@
-# Commands
+* Commands
 
 Generated from the built binary's help. Do not edit by hand.
-Run `just docs` to refresh it and `just docs-check` to check it.
+Run =just docs= to refresh it and =just docs-check= to check it.
 
-[Start here](../README.md) for a short tour.
+[[../README.md][Start here]] for a short tour.
 
-## hc
+** hc
 
-```text
+#+begin_src text
 hc - run programs and coding agents in terminals that stay alive
 
 Usage: hc <command> [options]
@@ -69,11 +69,11 @@ Examples
   hc run reviewer "review src/x.rs"        a template with a task
 
 Agent? Run: hc --skill
-```
+#+end_src
 
-## hc attach
+** hc attach
 
-```text
+#+begin_src text
 Put this terminal on a core terminal (detach: ctrl+\)
 
 Usage: hc attach [OPTIONS] [TERMINAL]
@@ -86,11 +86,11 @@ Options:
       --observe            Watch only: never type or resize
       --history <HISTORY>  Scrollback lines to show first (main screen only) [default: 0]
   -h, --help               Print help
-```
+#+end_src
 
-## hc connect
+** hc connect
 
-```text
+#+begin_src text
 Speak the protocol over stdin/stdout (`ssh box hc connect`)
 
 Usage: hc connect [OPTIONS]
@@ -99,11 +99,11 @@ Options:
       --json               JSON output even in a terminal
       --session <SESSION>  The hc session to reach, like HC_SESSION (one command that reads the same in sh, cmd and PowerShell)
   -h, --help               Print help
-```
+#+end_src
 
-## hc events
+** hc events
 
-```text
+#+begin_src text
 Follow fact changes as they happen (one JSON line each when piped)
 
 Usage: hc events [OPTIONS]
@@ -115,11 +115,11 @@ Options:
       --label <K=V>                Only terminals carrying all of these labels (repeatable)
       --doc <NAME>                 Documents by name (repeatable); a name ending in `*` is a prefix. Naming narrows, so documents alone hear only them — name a terminal for both
   -h, --help                       Print help
-```
+#+end_src
 
-## hc exec
+** hc exec
 
-```text
+#+begin_src text
 Run one program without a terminal, here or on a machine: exactly what it wrote, and its exit code
 
 Usage: hc exec [OPTIONS] <ARGV>...
@@ -135,11 +135,11 @@ Options:
       --timeout <TIMEOUT>  Seconds before it and everything it started are ended (default 60, at most 600)
   -i, --stdin              Feed what is piped into hc to its stdin
   -h, --help               Print help
-```
+#+end_src
 
-## hc file
+** hc file
 
-```text
+#+begin_src text
 Read, write or edit a file here or on a machine: an agent's hands there
 
 Usage: hc file [OPTIONS] <COMMAND>
@@ -153,11 +153,11 @@ Commands:
 Options:
       --json  JSON output even in a terminal
   -h, --help  Print help
-```
+#+end_src
 
-## hc file edit
+** hc file edit
 
-```text
+#+begin_src text
 Replace exact text found once (--old X --new Y, repeatable); all or none
 
 Usage: hc file edit [OPTIONS] --old <OLD> --new <NEW> <PATH>
@@ -172,11 +172,11 @@ Options:
       --old <OLD>     Exact text found once in the file (repeatable, paired with --new in order)
       --new <NEW>     What replaces it
   -h, --help          Print help
-```
+#+end_src
 
-## hc file read
+** hc file read
 
-```text
+#+begin_src text
 Print a text file, or lines of it (--offset, --limit)
 
 Usage: hc file read [OPTIONS] <PATH>
@@ -191,11 +191,11 @@ Options:
       --offset <OFFSET>  The first line to give, from 1
       --limit <LIMIT>    At most this many lines (default: all, up to 8 MB)
   -h, --help             Print help
-```
+#+end_src
 
-## hc file write
+** hc file write
 
-```text
+#+begin_src text
 Write what is piped in as the file, making missing folders
 
 Usage: hc file write [OPTIONS] <PATH>
@@ -208,11 +208,11 @@ Options:
       --on <MACHINE>  On another machine (see `hc machine ls`)
       --cwd <CWD>     Where a relative path starts (default: where hc runs; through the API, the core's; with --on, that machine's home)
   -h, --help          Print help
-```
+#+end_src
 
-## hc get
+** hc get
 
-```text
+#+begin_src text
 Show one terminal
 
 Usage: hc get [OPTIONS] [TERMINAL]
@@ -223,11 +223,11 @@ Arguments:
 Options:
       --json  JSON output even in a terminal
   -h, --help  Print help
-```
+#+end_src
 
-## hc interrupt
+** hc interrupt
 
-```text
+#+begin_src text
 Press the stop key and report what happened
 
 Usage: hc interrupt [OPTIONS] [TERMINAL]
@@ -239,11 +239,11 @@ Options:
       --json               JSON output even in a terminal
       --timeout <TIMEOUT>  Seconds to watch for an effect (default 10)
   -h, --help               Print help
-```
+#+end_src
 
-## hc keep
+** hc keep
 
-```text
+#+begin_src text
 Keep a live terminal after loss (--off disables)
 
 Usage: hc keep [OPTIONS] <TERMINAL>
@@ -255,11 +255,11 @@ Options:
       --json  JSON output even in a terminal
       --off   Keep this live terminal after loss. Existing streams end with the loss reason; reattach after `restarted`
   -h, --help  Print help
-```
+#+end_src
 
-## hc keys
+** hc keys
 
-```text
+#+begin_src text
 Press named keys (enter, esc, up, ctrl+c, alt+x, f5, a...)
 
 Usage: hc keys [OPTIONS] <TERMINAL> <KEYS>...
@@ -271,11 +271,11 @@ Arguments:
 Options:
       --json  JSON output even in a terminal
   -h, --help  Print help
-```
+#+end_src
 
-## hc kill
+** hc kill
 
-```text
+#+begin_src text
 End a terminal's program (hangup, then escalate)
 
 Usage: hc kill [OPTIONS] [TERMINAL]
@@ -286,11 +286,11 @@ Arguments:
 Options:
       --json  JSON output even in a terminal
   -h, --help  Print help
-```
+#+end_src
 
-## hc label
+** hc label
 
-```text
+#+begin_src text
 Set labels (key=value; key= removes)
 
 Usage: hc label [OPTIONS] <TERMINAL> <K=V>...
@@ -302,11 +302,11 @@ Arguments:
 Options:
       --json  JSON output even in a terminal
   -h, --help  Print help
-```
+#+end_src
 
-## hc ls
+** hc ls
 
-```text
+#+begin_src text
 List live terminals
 
 Usage: hc ls [OPTIONS]
@@ -316,11 +316,11 @@ Options:
       --json         JSON output even in a terminal
       --label <K=V>  Only terminals carrying all of these labels (repeatable)
   -h, --help         Print help
-```
+#+end_src
 
-## hc machine
+** hc machine
 
-```text
+#+begin_src text
 Other machines, reached over ssh
 
 Usage: hc machine [OPTIONS] <COMMAND>
@@ -337,11 +337,11 @@ Commands:
 Options:
       --json  JSON output even in a terminal
   -h, --help  Print help
-```
+#+end_src
 
-## hc machine add
+** hc machine add
 
-```text
+#+begin_src text
 Add a machine you reach with ssh: hc machine add vps
 
 Usage: hc machine add [OPTIONS] [TARGET]
@@ -357,11 +357,11 @@ Options:
       --name <NAME>        What to call it here (default: the target's host)
       --session <SESSION>  The hc session on that machine (default: its default)
   -h, --help               Print help
-```
+#+end_src
 
-## hc machine login
+** hc machine login
 
-```text
+#+begin_src text
 Log in again (a password or code) after the machine says it needs one. On Windows: reconnect once its SSH keys work
 
 Usage: hc machine login [OPTIONS] <MACHINE>
@@ -372,11 +372,11 @@ Arguments:
 Options:
       --json  JSON output even in a terminal
   -h, --help  Print help
-```
+#+end_src
 
-## hc machine ls
+** hc machine ls
 
-```text
+#+begin_src text
 List the machines added here
 
 Usage: hc machine ls [OPTIONS]
@@ -384,11 +384,11 @@ Usage: hc machine ls [OPTIONS]
 Options:
       --json  JSON output even in a terminal
   -h, --help  Print help
-```
+#+end_src
 
-## hc machine rename
+** hc machine rename
 
-```text
+#+begin_src text
 Give a machine a new name here
 
 Usage: hc machine rename [OPTIONS] <MACHINE> <NEW_NAME>
@@ -400,11 +400,11 @@ Arguments:
 Options:
       --json  JSON output even in a terminal
   -h, --help  Print help
-```
+#+end_src
 
-## hc machine rm
+** hc machine rm
 
-```text
+#+begin_src text
 Forget a machine (its terminals keep running there)
 
 Usage: hc machine rm [OPTIONS] <MACHINE>
@@ -415,11 +415,11 @@ Arguments:
 Options:
       --json  JSON output even in a terminal
   -h, --help  Print help
-```
+#+end_src
 
-## hc machine update
+** hc machine update
 
-```text
+#+begin_src text
 Copy this hc there and restart hc there (its terminals keep running)
 
 Usage: hc machine update [OPTIONS] <MACHINE>
@@ -430,11 +430,11 @@ Arguments:
 Options:
       --json  JSON output even in a terminal
   -h, --help  Print help
-```
+#+end_src
 
-## hc put
+** hc put
 
-```text
+#+begin_src text
 Send a local file beside a terminal (on its machine); prints where it landed
 
 Usage: hc put [OPTIONS] <TERMINAL> <FILE>
@@ -446,11 +446,11 @@ Arguments:
 Options:
       --json  JSON output even in a terminal
   -h, --help  Print help
-```
+#+end_src
 
-## hc read
+** hc read
 
-```text
+#+begin_src text
 Print a terminal's screen and history
 
 Usage: hc read [OPTIONS] [TERMINAL]
@@ -462,11 +462,11 @@ Options:
       --json           JSON output even in a terminal
       --lines <LINES>  Lines of history above the screen [default: 0]
   -h, --help           Print help
-```
+#+end_src
 
-## hc rm
+** hc rm
 
-```text
+#+begin_src text
 Remove a finished terminal
 
 Usage: hc rm [OPTIONS] [TERMINAL]
@@ -477,11 +477,11 @@ Arguments:
 Options:
       --json  JSON output even in a terminal
   -h, --help  Print help
-```
+#+end_src
 
-## hc run
+** hc run
 
-```text
+#+begin_src text
 Start a program, or a template by name with its task: hc run reviewer "review src/x.rs"
 
 Usage: hc run [OPTIONS] [ARGV]...
@@ -504,11 +504,11 @@ Options:
       --bg                 Start it and come back at once (a server, several workers)
       --timeout <TIMEOUT>  Seconds before a wait checks in, leaving it running (default: config `wait_timeout`, else 180)
   -h, --help               Print help
-```
+#+end_src
 
-## hc schema
+** hc schema
 
-```text
+#+begin_src text
 Every API method with its JSON Schema, for app builders
 
 Usage: hc schema [OPTIONS]
@@ -516,11 +516,11 @@ Usage: hc schema [OPTIONS]
 Options:
       --json  JSON output even in a terminal
   -h, --help  Print help
-```
+#+end_src
 
-## hc send
+** hc send
 
-```text
+#+begin_src text
 Paste text into a terminal and press Enter (waits for a person's unfinished draft)
 
 Usage: hc send [OPTIONS] <TERMINAL> <TEXT>
@@ -536,11 +536,11 @@ Options:
       --wait               Then wait for the turn this send started
       --timeout <TIMEOUT>  With wait: seconds before it checks in (default: config, else 180)
   -h, --help               Print help
-```
+#+end_src
 
-## hc server
+** hc server
 
-```text
+#+begin_src text
 Start, stop or inspect the core
 
 Usage: hc server [OPTIONS] <COMMAND>
@@ -555,11 +555,11 @@ Commands:
 Options:
       --json  JSON output even in a terminal
   -h, --help  Print help
-```
+#+end_src
 
-## hc server restart
+** hc server restart
 
-```text
+#+begin_src text
 Restart the core (e.g. after an update); programs keep running
 
 Usage: hc server restart [OPTIONS]
@@ -568,41 +568,41 @@ Options:
       --fresh  Take this shell's environment for new terminals; run from a terminal outside Herdr
       --json   JSON output even in a terminal
   -h, --help   Print help
-```
+#+end_src
 
-## hc server start
+** hc server start
 
-```text
+#+begin_src text
 Usage: hc server start [OPTIONS]
 
 Options:
       --json  JSON output even in a terminal
   -h, --help  Print help
-```
+#+end_src
 
-## hc server status
+** hc server status
 
-```text
+#+begin_src text
 Usage: hc server status [OPTIONS]
 
 Options:
       --json  JSON output even in a terminal
   -h, --help  Print help
-```
+#+end_src
 
-## hc server stop
+** hc server stop
 
-```text
+#+begin_src text
 Usage: hc server stop [OPTIONS]
 
 Options:
       --json  JSON output even in a terminal
   -h, --help  Print help
-```
+#+end_src
 
-## hc templates
+** hc templates
 
-```text
+#+begin_src text
 Templates you can run by name (~/.config/herdr-core/templates)
 
 Usage: hc templates [OPTIONS]
@@ -610,11 +610,11 @@ Usage: hc templates [OPTIONS]
 Options:
       --json  JSON output even in a terminal
   -h, --help  Print help
-```
+#+end_src
 
-## hc update
+** hc update
 
-```text
+#+begin_src text
 Swap this hc for another build and restart (terminals keep running)
 
 Usage: hc update [OPTIONS]
@@ -625,11 +625,11 @@ Options:
       --version <X.Y.Z>  At least this release (`0.1.4`): nothing changes when this hc is already that or newer
       --force            Allow an older version (saved state only moves forward), or a release of another protocol generation
   -h, --help             Print help
-```
+#+end_src
 
-## hc wait
+** hc wait
 
-```text
+#+begin_src text
 Wait for your children (--children any) or one terminal; a message to you also ends it
 
 Usage: hc wait [OPTIONS] [TERMINAL]
@@ -657,4 +657,4 @@ Options:
 
   -h, --help
           Print help (see a summary with '-h')
-```
+#+end_src
